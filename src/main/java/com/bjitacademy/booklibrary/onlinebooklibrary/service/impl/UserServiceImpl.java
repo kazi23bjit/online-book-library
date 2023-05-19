@@ -9,7 +9,6 @@ import com.bjitacademy.booklibrary.onlinebooklibrary.exception.UserAlreadyExistE
 import com.bjitacademy.booklibrary.onlinebooklibrary.model.AuthenticationRequestModel;
 import com.bjitacademy.booklibrary.onlinebooklibrary.model.AuthenticationResponse;
 import com.bjitacademy.booklibrary.onlinebooklibrary.model.UserRequestModel;
-import com.bjitacademy.booklibrary.onlinebooklibrary.model.UserResponseModel;
 import com.bjitacademy.booklibrary.onlinebooklibrary.repository.UserRepository;
 import com.bjitacademy.booklibrary.onlinebooklibrary.service.RoleService;
 import com.bjitacademy.booklibrary.onlinebooklibrary.service.UserService;
@@ -17,17 +16,11 @@ import com.bjitacademy.booklibrary.onlinebooklibrary.utils.JwtService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 

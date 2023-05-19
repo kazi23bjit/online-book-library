@@ -26,9 +26,16 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class ApplicationConfig implements UserDetailsService{
     private final UserRepository userRepo;
+
+//    @Bean
+//    public UserDetailsService userDetailsService(){
+//        return username -> userRepo.findByEmail(username)
+//                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+//
+//    }
     @Transactional(readOnly = true)
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String username) {
         Optional<User> user = userRepo.findByEmail(username);
         if(user.isPresent()){
             User requiredUser = user.get();

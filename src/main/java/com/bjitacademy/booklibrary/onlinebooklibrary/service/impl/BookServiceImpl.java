@@ -22,6 +22,7 @@ public class BookServiceImpl implements BookService {
         List<BookModel> bookModels = new ArrayList<>();
         for(Book book:books){
             BookModel bookModel = BookModel.builder()
+                                .id(book.getId())
                                 .title(book.getTitle())
                                 .author(book.getAuthor())
                                 .genre(book.getGenre())
@@ -109,6 +110,7 @@ public class BookServiceImpl implements BookService {
             bookRepository.save(requiredBook);
 
             BookModel requiredUpdatedBook = BookModel.builder()
+                    .id(requiredBook.getId())
                     .title(requiredBook.getTitle())
                     .author(requiredBook.getAuthor())
                     .genre(requiredBook.getGenre())
@@ -128,6 +130,7 @@ public class BookServiceImpl implements BookService {
         List<BookModel> bookModels = new ArrayList<>();
         for(Book book: books){
             BookModel bookModel = BookModel.builder()
+                    .id(book.getId())
                     .title(book.getTitle())
                     .author(book.getAuthor())
                     .genre(book.getGenre())
